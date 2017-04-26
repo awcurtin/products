@@ -218,3 +218,5 @@ C:\Users\Andrew\Documents\Visual Studio 2017\Projects\TestMembership2\TestMember
 C:\Users\Andrew\Documents\Visual Studio 2017\Projects\TestMembership2\TestMembership\obj\Debug\TestMembership.csprojResolveAssemblyReference.cache
 C:\Users\Andrew\Documents\Visual Studio 2017\Projects\TestMembership2\TestMembership\obj\Debug\TestMembership.dll
 C:\Users\Andrew\Documents\Visual Studio 2017\Projects\TestMembership2\TestMembership\obj\Debug\TestMembership.pdb
+C:\Users\Andrew\Documents\visual studio 2017\Projects\TestMembership2\TestMembership\bin\Swashbuckle.Core.dll
+C:\Users\Andrew\Documents\visual studio 2017\Projects\TestMembership2\TestMembership\bin\WebActivatorEx.dll

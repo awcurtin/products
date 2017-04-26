@@ -64,12 +64,9 @@ namespace TestMembership.Components
                 param.TypeName = "dbo.ProductsIn";
                 param.SqlValue = data;
 
-                var sql = new Sql().Append("; EXEC dbo.spAddAll", param);
+                var sql = new Sql().Append("; EXEC dbo.spAddAll @@data = @0", param);
                 var output = db.Query<Products>(sql);
 
-
-                /*modify when implemented*/
-                //products.Add(new Products(0, "not modified", 800.8m));
                 return output;
             }
         }

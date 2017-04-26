@@ -98,10 +98,7 @@ namespace TestMembership.Controllers
         [HttpPost]
         public List<Products> PostAll(List<Products> entries)
         {
-            
             return PocoRepository.AddAll(entries).ToList();
-
-            //database.AddRange(entries);
             
         }
 
