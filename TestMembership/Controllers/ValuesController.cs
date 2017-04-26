@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -21,6 +22,7 @@ namespace TestMembership.Controllers
         //[Route(Name = "route1")]
         public List<Products> Get()
         {
+
             return PocoRepository.GetProducts().ToList();
             //return ProductRepository.GetProducts().ToList();
         }
@@ -76,10 +78,26 @@ namespace TestMembership.Controllers
         }
 
         [HttpPost]
-        public async Task<Products> AddProduct(Products p)
-        {   
+        public async Task<IHttpActionResult> AddProduct(Products p) //IHttpActionResult
+        {
+            if (ModelState.IsValid)
+            {
+                //proceed as normal, return value
+                return Ok(await ProductRepository.AddProduct(p));
+            }
+
+            List<string> errorList = new List<string>();
+
+            foreach (var value in ModelState.Values)
+            {
+                foreach (var error in value.Errors)
+                {
+                    errorList.Add(error.ErrorMessage);
+                }
+            }
             
-            return await ProductRepository.AddProduct(p);
+            //return BadRequest("Error string of choice");
+            return BadRequest(ModelState);
         }
 
         [HttpPost]

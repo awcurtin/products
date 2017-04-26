@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -21,9 +22,11 @@ namespace TestMembership.Models
         }
 
         public int? Id { get; set; }
-   
+        
+        [Range(0, 10000, ErrorMessage = "Price must be in range [0,10000]"), Required(ErrorMessage = "Price must be supplied")]
         public decimal Price { get; set; }
 
+        [Required(ErrorMessage = "Name must be supplied")]
         public string Name { get; set; }
         
     }
